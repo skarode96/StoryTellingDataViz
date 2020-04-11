@@ -64,6 +64,21 @@ strong {
     width: 1000px;
 }
 
+
+#chart {
+    font-family: 'Merriweather Sans', sans-serif;
+    display: inline-block;
+    position: fixed;
+    font-size: 10px;
+    font-weight: 400;
+    color: #4c4c4c;
+    fill: #4c4c4c;
+    text-align: center;
+    cursor: default;
+    height: 2000px;
+    width: 1000px;
+}
+
 .tick line {
     stroke: 'red'
 }
@@ -104,15 +119,6 @@ img {
 }
 
 
-#chart {
-    font-family: 'Merriweather Sans', sans-serif;
-    font-size: 10px;
-    font-weight: 400;
-    color: #4c4c4c;
-    fill: #4c4c4c;
-    text-align: center;
-    cursor: default;
-}
 
 a,
 a:hover {

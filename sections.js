@@ -23,6 +23,7 @@ function clean(chartType){
 
 function draw1(){
     console.log("draw1");
+    searchEvent("Management analysts");
     //Stop simulation
     // simulation.stop()
     //
@@ -39,6 +40,8 @@ function draw1(){
 
 function draw2(){
     console.log("draw2");
+    searchEvent("Credit analysts")
+
     // let svg = d3.select("#vis").select('svg')
     //
     // clean('none')
@@ -47,12 +50,14 @@ function draw2(){
 
 function draw3(){
     console.log("draw3");
+    searchEvent("Business and financial operations occupations")
     // let svg = d3.select("#vis").select('svg')
     // clean('isMultiples')
 }
 
 function draw4(){
     console.log("draw4");
+    searchEvent("Compliance officers")
     // let svg = d3.select('#vis').select('svg')
     //
     // clean('isHist')
