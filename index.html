@@ -3,12 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>-->
-<!--    <script src = 'd3.js'></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-<!--    <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>-->
-<!--    <script src="https://d3js.org/d3.v5.min.js"></script>-->
-
+    <!--    <script src = 'd3.js'></script>-->
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>-->
+    <!--    <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>-->
+    <!--    <script src="https://d3js.org/d3.v5.min.js"></script>-->
+    <!--        <script src="https://d3js.org/d3.v4.js"></script>-->
 
 
     <!-- jQuery -->
@@ -28,18 +28,19 @@
 
 <body>
 
-    <img src="https://github.com/cuthchow/college-majors-visualisation/blob/master/preview.png" alt="">
-    <div id="tooltip"></div>
-    <div id="graphic">
-        <div id="sections">
+<div id="graphic" class="container-fluid">
+    <div class="row text-center" style="margin-top: 20px;">
+        <div id="sections" class="col-sm-4">
             <section class="step">
                 <div id="topTitle" class="title">A Closer Look at Labor</div>
                 <div id="subTitle">The number of employed persons by occupation & age | US</div>
-                <div id="topText">In this visualization you can investigate how the 146 million employed persons in 2014 were divided up between
+                <div id="topText">In this visualization you can investigate how the 146 million employed persons in 2014
+                    were divided up between
                     ~550 different occupations.
                     The occupations are grouped and even subgrouped.
                     Each grey colored circle encloses all occupations that fall under its umbrella name.
-                    Each white circle is finally an actual profession and further shows the age distribution within that occupation.
+                    Each white circle is finally an actual profession and further shows the age distribution within that
+                    occupation.
                     You can click on any of the circles to zoom in or search for an occupation with the search box below
                 </div>
 
@@ -48,27 +49,39 @@
             <section class="step">
                 <div id="searchTitle" class="title">Find an Occupation</div>
                 <div class="form-group">
-                    <select id="searchBox" class="combobox input-large form-control" style="display: none;" onchange="searchEvent(this.value)">
+                    <select id="searchBox" class="combobox input-large form-control" style="display: none;"
+                            onchange="searchEvent(this.value)">
                         <option value="" selected="selected">Search...</option>
                     </select>
                 </div>
             </section>
-            <section class = 'step'>
+            <section class='step'>
                 <h1>Section 3</h1>
             </section>
             <section class="step">
                 <h1>The End</h1>
             </section>
         </div>
-        <div id="chart"></div>
+        <div class="col-sm-8" id="vis">
+            <div id="loadText">Loading Data</div>
+            <div id="bar-chart"></div>
+            <div id="bubble-chart"></div>
+        </div>
     </div>
+</div>
 
 
-    <script src = 'scroller.js'></script>
-    <script src = 'sections.js'></script>
-    <script src = "script.js"></script>
-    <script>
-        setTimeout(drawAll, 500);
-    </script>
+<script src='scroller.js'></script>
+<script src='sections.js'></script>
+<script src='bar-chart.js'></script>
+<script src="script.js"></script>
+
+<script>
+    setTimeout(() => drawAll(), 200);
+    setTimeout(() => {
+        drawBarChart();
+        draw1();
+    }, 1000);
+</script>
 </body>
 </html>

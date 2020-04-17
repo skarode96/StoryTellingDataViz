@@ -54,20 +54,9 @@ strong {
     justify-content: space-around;
 }
 
-#vis {
-    display: inline-block;
-    position: fixed;
-    top: 0px;
-    z-index: 1;
-    margin-left: 0;
-    height: 1000px;
-    width: 1000px;
-}
 
-
-#chart {
+#bubble-chart {
     font-family: 'Merriweather Sans', sans-serif;
-    display: inline-block;
     position: fixed;
     font-size: 10px;
     font-weight: 400;
@@ -75,9 +64,24 @@ strong {
     fill: #4c4c4c;
     text-align: center;
     cursor: default;
-    height: 2000px;
-    width: 1000px;
+    height: 1000px;
+    width: 850px;
 }
+
+#bar-chart {
+    font-family: 'Merriweather Sans', sans-serif;
+    position: fixed;
+    font-size: 10px;
+    font-weight: 400;
+    color: #4c4c4c;
+    fill: #4c4c4c;
+    text-align: center;
+    cursor: default;
+    height: 1000px;
+    width: 850px;
+}
+
+
 
 .tick line {
     stroke: 'red'
@@ -311,4 +315,16 @@ a:hover {
 
 .innerValue {
     /*font-weight: 700;*/
+}
+
+
+.axis {
+    font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
 }

@@ -1,13 +1,12 @@
 
 
 function scroller(){
-    let container = d3.select('body')
+    let container = d3.select('body');
     let dispatch = d3.dispatch('active', 'progress');
-    console.log(dispatch);
-    let sections = d3.selectAll('.step')
-    let sectionPositions
+    let sections = d3.selectAll('.step');
+    let sectionPositions;
    
-    let currentIndex = -1
+    let currentIndex = -1;
     let containerStart = 0;
 
     function scroll(){

@@ -1,69 +1,42 @@
 
-function createScales(){
-
-}
-
-function drawInitial(){
-
-}
-
-//Cleaning Function
-//Will hide all the elements which are not necessary for a given chart type 
-
 function clean(chartType){
-    let svg = d3.select('#vis').select('svg')
-    if (chartType !== "isScatter") {
-        svg.select('.scatter-x').transition().attr('opacity', 0)
-        svg.select('.scatter-y').transition().attr('opacity', 0)
-        svg.select('.best-fit').transition().duration(200).attr('opacity', 0)
+    if (chartType === "bar-chart") {
+        console.log("inside bar chart clean");
+        d3.select("#bar-chart").style('opacity', 0);
+    }
+
+    if (chartType === "bubble-chart") {
+        console.log("inside bubble chart clean");
+        d3.select("#bubble-chart").style('opacity', 0)
     }
 }
 
 //First draw function
 
 function draw1(){
-    console.log("draw1");
-    searchEvent("Management analysts");
-    //Stop simulation
-    // simulation.stop()
-    //
-    // let svg = d3.select("#vis")
-    //                 .select('svg')
-    //                 .attr('width', 1000)
-    //                 .attr('height', 950)
-    //
-    // clean('isFirst')
-
-    // draw svg
+    d3.select("#bubble-chart").style('opacity', 1);
+    clean('bar-chart');
+    zoomTo(root);
 }
 
 
 function draw2(){
     console.log("draw2");
-    searchEvent("Credit analysts")
-
-    // let svg = d3.select("#vis").select('svg')
-    //
-    // clean('none')
+    d3.select("#bar-chart").style('opacity', 1)
+    clean('bubble-chart');
 
 }
 
 function draw3(){
+    d3.select("#bubble-chart").style('opacity', 1);
     console.log("draw3");
+    clean('bar-chart');
     searchEvent("Business and financial operations occupations")
-    // let svg = d3.select("#vis").select('svg')
-    // clean('isMultiples')
 }
 
 function draw4(){
     console.log("draw4");
-    searchEvent("Compliance officers")
-    // let svg = d3.select('#vis').select('svg')
-    //
-    // clean('isHist')
-    //
-    // simulation.stop()
-    //
+    zoomTo(root);
 }
 
 let activationFunctions = [
@@ -72,10 +45,6 @@ let activationFunctions = [
     draw3,
     draw4,
 ]
-
-//All the scrolling function
-//Will draw a new graph based on the index provided by the scroll
-
 
 let scroll = scroller()
     .container(d3.select('#graphic'))

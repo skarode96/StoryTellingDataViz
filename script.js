@@ -16,11 +16,8 @@ function drawAll() {
 	////////////////// Create Set-up variables  ////////////////// 
 	////////////////////////////////////////////////////////////// 
 
-	var width = Math.max($("#chart").width(),350) - 300,
+	var width = Math.max($("#bubble-chart").width(),350) - 300,
 		height = (window.innerWidth < 768 ? width : window.innerHeight - 90);
-
-		//console.log(width);
-		//console.log(height);
 
 	var mobileSize = (window.innerWidth < 768 ? true : false);
 
@@ -28,7 +25,8 @@ function drawAll() {
 	/////////////////////// Create SVG  /////////////////////// 
 	////////////////////////////////////////////////////////////// 
 
-	var svg = d3.select("#chart").append("svg")
+	var svg = d3.select("#bubble-chart").append("svg")
+		.attr("class", "bubble-chart")
 		.attr("width", width)
 		.attr("height", height)
 		.append("g")
@@ -36,7 +34,7 @@ function drawAll() {
 
 	////////////////////////////////////////////////////////////// 
 	/////////////////////// Create Scales  /////////////////////// 
-	////////////////////////////////////////////////////////////// 
+	//////////////////////////////////////////////////////////////
 
 	var colorCircle = d3.scale.ordinal()
 			.domain([0,1,2,3])
@@ -265,7 +263,7 @@ function drawAll() {
 	function showTooltip (d) {
 	  $(this).popover({
 		placement: 'auto top',
-		container: '#chart',
+		container: '#bubble-chart',
 		trigger: 'manual',
 		html : true,
 		content: function() { 
@@ -437,10 +435,6 @@ function drawAll() {
 	});
 }//drawAll
 
-////////////////////////////////////////////////////////////// 
-//////////////// Function | Search Box Event ///////////////// 
-////////////////////////////////////////////////////////////// 
-
 function searchEvent(occupation) {	
 	//If the occupation is not equal to the default - mouseover function
 	if (occupation !== "" & typeof occupation !== "undefined") {
@@ -452,12 +446,6 @@ function searchEvent(occupation) {
 	}//else
 }//searchEvent
 
-////////////////////////////////////////////////////////////// 
-//////////////////// The zoom function ///////////////////////
-////////////////////////////////////////////////////////////// 
-
-//The zoom function
-//Change the sizes of everything inside the circle and the arc texts
 function zoomTo(d) {
 	
 	focus = d;
@@ -630,10 +618,6 @@ function changeLocation(d, v, k) {
 	
 }//changeSizes
 
-////////////////////////////////////////////////////////////// 
-///////////////////// Helper Functions ///////////////////////
-////////////////////////////////////////////////////////////// 
-
 //Wraps SVG text - Taken from http://bl.ocks.org/mbostock/7555321
 function wrap(text, width) {
 	//console.log(d3.select(text));
@@ -671,10 +655,11 @@ function wrap(text, width) {
 }//wrap
 
 //Taken from https://groups.google.com/forum/#!msg/d3-js/WC_7Xi6VV50/j1HK0vIWI-EJ
-//Calls a function only after the total transition ends
+
 function endall(transition, callback) { 
 	var n = 0; 
 	transition 
 		.each(function() { ++n; }) 
 		.each("end", function() { if (!--n) callback.apply(this, arguments); }); 
-}//endall
+}
+
