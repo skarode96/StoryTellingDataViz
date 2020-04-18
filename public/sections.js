@@ -31,6 +31,7 @@ function draw1(){
 
 function draw2(){
     d3.select("#bar-chart").transition().delay(200).style('opacity', 1)
+    searchEvent("Cost estimators");
     clean('bubble-chart');
     clean('pie-chart');
     clean('radial-chart');
@@ -47,6 +48,7 @@ function draw3(){
 
 function draw4() {
     d3.select("#radial-chart").transition().delay(200).style('opacity', 1);
+    zoomTo(root);
     clean('bubble-chart');
     clean('bar-chart');
     clean('pie-chart');
