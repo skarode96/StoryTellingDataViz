@@ -37,11 +37,12 @@ function drawBarChart() {
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
             .call(xAxis)
+            .append("text")
             .selectAll("text")
             .style("text-anchor", "end")
             .attr("dx", "-.8em")
             .attr("dy", "-.55em")
-            .attr("transform", "rotate(-90)" );
+            .attr("transform", "rotate(-45)");
 
         svg.append("g")
             .attr("class", "y axis")
@@ -51,7 +52,8 @@ function drawBarChart() {
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Value ($)");
+            .attr("transform", "rotate(-90)")
+            .text("Employed Persons in Thousands");
 
         svg.selectAll("bar")
             .data(data)

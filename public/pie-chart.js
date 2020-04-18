@@ -39,7 +39,7 @@ function drawPieChart() {
             .style("text-anchor", "end")
             .attr("dx", "-.8em")
             .attr("dy", "-.55em")
-            .attr("transform", "rotate(-90)" );
+            .attr("transform", "translate(54,-"+ (height-60) +") rotate(-90)");
 
         svg.append("g")
             .attr("class", "y axis")
@@ -49,14 +49,14 @@ function drawPieChart() {
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Value ($)");
+            .text("Employed Persons in Thousands");
 
         svg.selectAll("pie")
             .data(data)
             .enter().append("rect")
             .style("fill", "steelblue")
-            .attr("x", function(d) { return x(d.ProfessionCategory); })
-            .attr("width", x.rangeBand())
+            .attr("x", function(d) { return x(d.ProfessionCategory) + 25; })
+            .attr("width", x.rangeBand() - 45)
             .attr("y", function(d) { return y(d.Value); })
             .attr("height", function(d) { return height - y(d.Value); });
 
