@@ -286,7 +286,6 @@ function drawAll() {
 		dataById = {}; 
 	 
 	 d3.csv("data/occupations by age.csv",function(error, csv) {
-		console.log(error, csv);
 	 	csv.forEach(function(d) {
 			d.value = +d.value;
 		 });

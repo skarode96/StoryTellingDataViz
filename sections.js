@@ -23,7 +23,6 @@ function draw1(){
     d3.select("#bubble-chart").style('opacity', 1);
     clean('bar-chart');
     clean('pie-chart');
-    zoomTo(root);
 }
 
 

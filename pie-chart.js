@@ -1,7 +1,7 @@
 function drawPieChart() {
     var margin = {top: 20, right: 20, bottom: 70, left: 40},
-        width = 600 - margin.left - margin.right,
-        height = 300 - margin.top - margin.bottom;
+        width =  712,
+        height = 411;
 
     var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
 

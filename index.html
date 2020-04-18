@@ -83,8 +83,8 @@
         <div class="col-sm-8" id="vis">
             <div id="loadText">Loading Data</div>
             <div id="bar-chart"></div>
-            <div id="bubble-chart"></div>
             <div id="pie-chart"></div>
+            <div id="bubble-chart"></div>
         </div>
     </div>
 </div>
@@ -97,12 +97,14 @@
 <script src="script.js"></script>
 
 <script>
-    setTimeout(() => drawAll(), 200);
+    setTimeout(() => {
+        drawAll();
+        draw1();
+    },100);
     setTimeout(() => {
         drawBarChart();
         drawPieChart();
-        draw1();
-    }, 1000);
+    },200);
 </script>
 </body>
 </html>
