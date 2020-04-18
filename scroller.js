@@ -1,12 +1,12 @@
 
 
 function scroller(){
-    let container = d3.select('body')
+    let container = d3.select('body');
     let dispatch = d3.dispatch('active', 'progress');
-    let sections = d3.selectAll('.step')
-    let sectionPositions
+    let sections = d3.selectAll('.step');
+    let sectionPositions;
    
-    let currentIndex = -1
+    let currentIndex = -1;
     let containerStart = 0;
 
     function scroll(){
@@ -18,7 +18,7 @@ function scroller(){
 
         let timer = d3.timer(function() {
             position();
-            timer.stop();
+            // timer.stop();
         });
     }
 
@@ -42,14 +42,16 @@ function scroller(){
         sectionIndex = Math.min(sections.size()-1, sectionIndex);
     
         if (currentIndex !== sectionIndex){
-            dispatch.call('active', this, sectionIndex);
+            dispatch.active(sectionIndex);
             currentIndex = sectionIndex;
         }
     
         let prevIndex = Math.max(sectionIndex - 1, 0);
         let prevTop = sectionPositions[prevIndex]
         let progress = (pos - prevTop) / (sectionPositions[sectionIndex] - prevTop);
-        dispatch.call('progress', this, currentIndex, progress)
+        dispatch.progress(currentIndex, progress)
+
+
     }
 
     scroll.container = function(value) {
