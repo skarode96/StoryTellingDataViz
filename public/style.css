@@ -38,7 +38,7 @@ body {
 
 h1, h2 {
     font-weight: 700;
-    text-align: right;
+    text-align: center;
     line-height: 32px;
 }
 
@@ -162,7 +162,7 @@ a:hover {
 .title {
     font-family: 'Oswald', sans-serif;
     color: #1c1c1c;
-    text-align: left;
+    text-align: center;
     margin-top: 100px;
 }
 
@@ -172,21 +172,21 @@ a:hover {
 }
 
 #subTitle {
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
     font-size: 16px;
-    color: #BFBFBF;
+    color: #4d0606;
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
 }
 
 #topText{
-    text-align: left;
+    text-align: justify;
     font-family: 'Merriweather Sans', sans-serif;
     font-size: 11px;
     /*margin-bottom: 10px;*/
     line-height: 1.5;
-    color: #7D7D7D;
+    color: #000000;
 }
 
 #searchTitle {
@@ -254,7 +254,7 @@ a:hover {
 }
 
 .legendSubTitle {
-    color: #BFBFBF;
+    color: #171c12;
     text-anchor: middle;
     font-size: 10px;
     line-height: 1.2;
@@ -314,7 +314,7 @@ a:hover {
 }
 
 .node--leaf {
-    fill: white;
+    fill: black;
 }
 
 .label,
@@ -328,8 +328,8 @@ a:hover {
 .circleText {
     font-family: 'Oswald', sans-serif;
     text-anchor: middle;
-    color: white;
-    fill: white;
+    color: #3E1302;
+    fill: #3E1302;
 }
 
 .innerCircleTitle {
