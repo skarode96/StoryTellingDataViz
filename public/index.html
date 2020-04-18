@@ -28,13 +28,15 @@
 </head>
 
 
-<body>
-
+<body class="body-background">
+<div id="attribution">
+    Data Source: <a href="https://www.bls.gov/cps/aa2014/cpsaat11b.htm" target="_blank">Bureau of Labor Statistics</a></span>
+</div>
 <div id="graphic" class="container-fluid">
     <div class="row text-center" style="margin-top: 20px;">
         <div id="sections" class="col-sm-4">
             <section class="step">
-                <div id="topTitle" class="title">A Closer Look at Labor</div>
+                <div id="topTitle" class="title">US Labor Force Statistics for year 2014</div>
                 <div id="subTitle">The number of employed persons by occupation & age | US</div>
                 <div id="topText">In this visualization you can investigate how the 146 million employed persons in 2014
                     were divided up between
@@ -45,8 +47,20 @@
                     occupation.
                     You can click on any of the circles to zoom in or search for an occupation with the search box below
                 </div>
-
-                <hr>
+<!--                <div class="row text-center" style=	"margin-top: 30px;">-->
+<!--                    <div class="col-sm-6">-->
+<!--                        <div id="legendTitle">Legend</div>-->
+<!--                        <div id="legendText">The size of each white circle is scaled according to the number of persons employed.-->
+<!--                            The bigger the circle, the more people who are working in that occupation-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div id="legendRowWrapper" class="col-sm-6">-->
+<!--                        <div id="legendTitle" style="text-align: center;">Number of employed persons</div>-->
+<!--                        <div class="legendSubTitle">in thousands</div>-->
+<!--                        <div id="legendCircles"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <hr>-->
             </section>
             <section class='step'>
                 <h1>Section 2</h1>
@@ -85,7 +99,7 @@
                 </div>
             </section>
         </div>
-        <div class="col-sm-8" id="vis">
+        <div class="col-sm-6" id="vis">
             <div id="loadText">Loading Data</div>
             <div id="bar-chart"></div>
             <div id="pie-chart"></div>
@@ -94,6 +108,14 @@
             </div>
             <div id="bubble-chart"></div>
         </div>
+        <div class="col-sm-2" id="legendBubble">
+            <div id="legendRowWrapper">
+                <div id="legendTitle" style="text-align: center;">Employed persons</div>
+                <div class="legendSubTitle">in thousands</div>
+                <div id="legendCircles"></div>
+            </div>
+        </div>
+        <hr>
     </div>
 </div>
 

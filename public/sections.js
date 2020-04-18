@@ -5,7 +5,8 @@ function clean(chartType){
     }
 
     if (chartType === "bubble-chart") {
-        d3.select("#bubble-chart").style('opacity', 0)
+        d3.select("#bubble-chart").style('opacity', 0);
+        d3.select('#legendBubble').style('opacity',0);
     }
 
     if (chartType === "pie-chart") {
@@ -21,6 +22,7 @@ function clean(chartType){
 
 function draw1(){
     d3.select("#bubble-chart").style('opacity', 1);
+    d3.select('#legendBubble').style('opacity',1);
     clean('bar-chart');
     clean('pie-chart');
     clean('radial-chart');
@@ -51,6 +53,7 @@ function draw4() {
 
 function draw5(){
     d3.select("#bubble-chart").style('opacity', 1);
+    d3.select('#legendBubble').style('opacity',1);
     searchEvent("Management, professional, and related occupations");
     clean('pie-chart');
     clean('bar-chart');

@@ -3,8 +3,12 @@
 @import url('https://fonts.googleapis.com/css?family=Domine:400,700&display=swap');
 
 body {
-    background-color: rgb(245, 244, 241);
     overflow-x: hidden;
+    background: lightgoldenrodyellow;
+}
+
+.body-background {
+    background: lightgoldenrodyellow;
 }
 
 #sections {
@@ -214,6 +218,12 @@ a:hover {
     color: #1c1c1c;
 }
 
+#legendBubble {
+    position: fixed;
+    margin-left: 1248px;
+    margin-top: 85px;
+}
+
 #legendText {
     text-align: left;
     margin-bottom: 10px;
@@ -257,13 +267,12 @@ a:hover {
 }
 
 #attribution {
-    text-align: left;
-    margin-bottom: 20px;
-    margin-top: 10px;
+    text-align: right;
+    margin-left: 1220px;
+    margin-top: 2px;
     font-size: 12px;
-    /*bottom: 0px;
-    position: fixed;*/
-    color: #bfbfbf;
+    position: fixed;
+    color: black;
     font-family: 'Merriweather Sans', sans-serif;
 }
 
