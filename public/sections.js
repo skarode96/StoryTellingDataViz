@@ -1,20 +1,20 @@
 
 function clean(chartType){
     if (chartType === "bar-chart") {
-        d3.select("#bar-chart").style('opacity', 0);
+        d3.select("#bar-chart").transition().delay(1).style('opacity', 0);
     }
 
     if (chartType === "bubble-chart") {
-        d3.select("#bubble-chart").style('opacity', 0);
-        d3.select('#legendBubble').style('opacity',0);
+        d3.select("#bubble-chart").transition().delay(1).style('opacity', 0);
+        d3.select('#legendBubble').transition().delay(1).style('opacity',0);
     }
 
     if (chartType === "pie-chart") {
-        d3.select("#pie-chart").style('opacity', 0)
+        d3.select("#pie-chart").transition().delay(1).style('opacity', 0)
     }
 
     if (chartType === "radial-chart") {
-        d3.select("#radial-chart").style('opacity', 0)
+        d3.select("#radial-chart").transition().delay(1).style('opacity', 0)
     }
 }
 
@@ -30,14 +30,15 @@ function draw1(){
 
 
 function draw2(){
-    d3.select("#bar-chart").style('opacity', 1)
+    d3.select("#bar-chart").transition().delay(200).style('opacity', 1)
     clean('bubble-chart');
     clean('pie-chart');
     clean('radial-chart');
+    zoomTo(root);
 }
 
 function draw3(){
-    d3.select("#pie-chart").style('opacity', 1);
+    d3.select("#pie-chart").transition().delay(200).style('opacity', 1);
     clean('bubble-chart');
     clean('bar-chart');
     clean('radial-chart');
@@ -45,15 +46,15 @@ function draw3(){
 }
 
 function draw4() {
-    d3.select("#radial-chart").style('opacity', 1);
+    d3.select("#radial-chart").transition().delay(200).style('opacity', 1);
     clean('bubble-chart');
     clean('bar-chart');
     clean('pie-chart');
 }
 
 function draw5(){
-    d3.select("#bubble-chart").style('opacity', 1);
-    d3.select('#legendBubble').style('opacity',1);
+    d3.select("#bubble-chart").transition().delay(200).style('opacity', 1);
+    d3.select('#legendBubble').transition().delay(200).style('opacity',1);
     searchEvent("Management, professional, and related occupations");
     clean('pie-chart');
     clean('bar-chart');
