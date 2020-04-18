@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-hierarchy.v1.min.js"></script>
+    <script src="https://d3js.org/d3-shape.v1.min.js"></script>
     <!--    <script src = 'd3.js'></script>-->
     <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>-->
     <!--    <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>-->
@@ -70,6 +72,9 @@
             <section class='step'>
                 <h1>Section 10</h1>
             </section>
+            <section class='step'>
+                <h1>Section 11</h1>
+            </section>
             <section class="step">
                 <div id="searchTitle" class="title">Find an Occupation</div>
                 <div class="form-group">
@@ -84,6 +89,9 @@
             <div id="loadText">Loading Data</div>
             <div id="bar-chart"></div>
             <div id="pie-chart"></div>
+            <div id="radial-chart">
+                <img class= "radialchart" src="data/chart.svg" />
+            </div>
             <div id="bubble-chart"></div>
         </div>
     </div>
@@ -94,17 +102,19 @@
 <script src='sections.js'></script>
 <script src='bar-chart.js'></script>
 <script src='pie-chart.js'></script>
+<script src='radial-chart.js'></script>
 <script src="script.js"></script>
 
 <script>
     setTimeout(() => {
         drawAll();
         draw1();
-    },100);
+    },10);
     setTimeout(() => {
         drawBarChart();
         drawPieChart();
-    },200);
+        drawRadialChart();
+    },20);
 </script>
 </body>
 </html>

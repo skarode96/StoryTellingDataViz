@@ -9,7 +9,7 @@ body {
 
 #sections {
     position: relative;
-    display: inline-block;
+    display inline-block;
     width: 400px;
     top: 60px;
     z-index: 90;
@@ -95,6 +95,19 @@ strong {
     width: 850px;
 }
 
+#radial-chart {
+    font-family: 'Merriweather Sans', sans-serif;
+    position: fixed;
+    font-size: 10px;
+    font-weight: 400;
+    color: #4c4c4c;
+    fill: #4c4c4c;
+    text-align: center;
+    cursor: default;
+    height: 1000px;
+    width: 850px;
+}
+
 
 .tick line {
     stroke: 'red'
@@ -131,10 +144,10 @@ a {
     text-decoration: none;
 }
 
-img {
-    display: none;
-}
 
+.radialchart {
+    width: 700px;
+}
 
 
 a,
@@ -341,4 +354,10 @@ a:hover {
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges;
+}
+
+treemap-rect {
+    fill: cadetblue;
+    opacity: 0.3;
+    stroke: white;
 }

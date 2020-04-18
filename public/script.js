@@ -554,7 +554,7 @@ function zoomTo(d) {
 				return d.valueLoc; 
 			})
 			.style("text-anchor", function(d) { return d.valuePos === "left" ? "start" : "end"; })
-			.style("fill", function(d) { return d.valuePos === "left" ? "#333333" : "white"; }); 
+			.style("fill", function(d) { return d.valuePos === "left" ? "#333333" : "white"; });
 		
 		setTimeout(function() {
 			changeLocation(d,v,k); 
@@ -623,7 +623,7 @@ function changeLocation(d, v, k) {
 
 //Wraps SVG text - Taken from http://bl.ocks.org/mbostock/7555321
 function wrap(text, width) {
-	//console.log(d3.select(text));
+	//1console.log(d3.select(text));
 	var text = d3.select(text),
 		words = text.text().split(/\s+/).reverse(),
 		currentSize = +(text.style("font-size")).replace("px",""),

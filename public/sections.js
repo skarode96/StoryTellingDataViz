@@ -1,102 +1,110 @@
 
 function clean(chartType){
     if (chartType === "bar-chart") {
-        console.log("inside bar chart clean");
         d3.select("#bar-chart").style('opacity', 0);
     }
 
     if (chartType === "bubble-chart") {
-        console.log("inside bubble chart clean");
         d3.select("#bubble-chart").style('opacity', 0)
     }
 
     if (chartType === "pie-chart") {
-        console.log("inside bubble chart clean");
         d3.select("#pie-chart").style('opacity', 0)
+    }
+
+    if (chartType === "radial-chart") {
+        d3.select("#radial-chart").style('opacity', 0)
     }
 }
 
 //First draw function
 
 function draw1(){
-    console.log("draw1");
     d3.select("#bubble-chart").style('opacity', 1);
     clean('bar-chart');
     clean('pie-chart');
+    clean('radial-chart');
 }
 
 
 function draw2(){
-    console.log("draw2");
     d3.select("#bar-chart").style('opacity', 1)
     clean('bubble-chart');
     clean('pie-chart');
+    clean('radial-chart');
 }
 
 function draw3(){
     d3.select("#pie-chart").style('opacity', 1);
-    console.log("draw3");
     clean('bubble-chart');
     clean('bar-chart');
+    clean('radial-chart');
 
 }
 
-function draw4(){
-    d3.select("#bubble-chart").style('opacity', 1);
-    searchEvent("Management, professional, and related occupations");
-    console.log("draw4");
-    clean('pie-chart');
+function draw4() {
+    d3.select("#radial-chart").style('opacity', 1);
+    clean('bubble-chart');
     clean('bar-chart');
+    clean('pie-chart');
 }
 
 function draw5(){
-    searchEvent( "Natural resources, construction, and maintenance occupations");
-    console.log("draw5");
+    d3.select("#bubble-chart").style('opacity', 1);
+    searchEvent("Management, professional, and related occupations");
     clean('pie-chart');
     clean('bar-chart');
-
+    clean('radial-chart');
 }
 
 function draw6(){
-    searchEvent("Production, transportation, and material moving occupations");
-    console.log("draw6");
+    searchEvent( "Natural resources, construction, and maintenance occupations");
     clean('pie-chart');
     clean('bar-chart');
+    clean('radial-chart');
+
 }
 
 function draw7(){
-    searchEvent("Sales and office occupations");
-    console.log("draw7");
+    searchEvent("Production, transportation, and material moving occupations");
     clean('pie-chart');
     clean('bar-chart');
+    clean('radial-chart');
 }
 
 function draw8(){
-    searchEvent("Service occupations");
-    console.log("draw8");
+    searchEvent("Sales and office occupations");
     clean('pie-chart');
     clean('bar-chart');
+    clean('radial-chart');
 }
 
 function draw9(){
-    zoomTo(root);
-    console.log("draw9");
+    searchEvent("Service occupations");
     clean('pie-chart');
     clean('bar-chart');
+    clean('radial-chart');
 }
 
 function draw10(){
     zoomTo(root);
-    console.log("draw10");
     clean('pie-chart');
     clean('bar-chart');
+    clean('radial-chart');
 }
 
 function draw11(){
     zoomTo(root);
-    console.log("draw11");
     clean('pie-chart');
     clean('bar-chart');
+    clean('radial-chart');
+}
+
+function draw12(){
+    zoomTo(root);
+    clean('pie-chart');
+    clean('bar-chart');
+    clean('radial-chart');
 }
 
 let activationFunctions = [
@@ -110,7 +118,8 @@ let activationFunctions = [
     draw8,
     draw9,
     draw10,
-    draw11
+    draw11,
+    draw12
 ]
 
 let scroll = scroller()
