@@ -22,7 +22,7 @@ body {
 
 .step {
     margin-bottom: 100px;
-    height: 700px;
+    height: 500px;
     font-family: "Domine";
     font-weight: 400;
     line-height: 1.4em;
@@ -82,6 +82,19 @@ strong {
 }
 
 
+#pie-chart {
+    font-family: 'Merriweather Sans', sans-serif;
+    position: fixed;
+    font-size: 10px;
+    font-weight: 400;
+    color: #4c4c4c;
+    fill: #4c4c4c;
+    text-align: center;
+    cursor: default;
+    height: 1000px;
+    width: 850px;
+}
+
 
 .tick line {
     stroke: 'red'
@@ -133,6 +146,7 @@ a:hover {
     font-family: 'Oswald', sans-serif;
     color: #1c1c1c;
     text-align: left;
+    margin-top: 100px;
 }
 
 #topTitle {

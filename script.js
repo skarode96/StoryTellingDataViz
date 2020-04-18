@@ -16,8 +16,12 @@ function drawAll() {
 	////////////////// Create Set-up variables  ////////////////// 
 	////////////////////////////////////////////////////////////// 
 
-	var width = Math.max($("#bubble-chart").width(),350) - 300,
-		height = (window.innerWidth < 768 ? width : window.innerHeight - 90);
+	var width = 912;
+	var height = 611;
+
+
+	// var width = Math.max($("#bubble-chart").width(),350) - 300,
+	// 	height = (window.innerWidth < 768 ? width : window.innerHeight - 90);
 
 	var mobileSize = (window.innerWidth < 768 ? true : false);
 
@@ -38,7 +42,7 @@ function drawAll() {
 
 	var colorCircle = d3.scale.ordinal()
 			.domain([0,1,2,3])
-			.range(['#bfbfbf','#838383','#4c4c4c','#1c1c1c']);
+			.range(['#FFE39C','#FFCD87','#FFAC63','#FF793B']);
 			
 	var colorBar = d3.scale.ordinal()
 			.domain(["16 to 19","20 to 24","25 to 34","35 to 44","45 to 54","55 to 64","65+"])
@@ -63,87 +67,87 @@ function drawAll() {
 			
 		//Inside each wrapper create the complete bar chart
 		d3.selectAll(".barWrapperOuter")
-			.each(function(d, i){ 	
+			.each(function(d, i){
 				if(this.id in dataById) {
-					
+
 					barsDrawn = true;
-					
-					//Save current circle data in separate variable	
+
+					//Save current circle data in separate variable
 					var current = d,
 						currentId = this.id;
-							  
+
 					//Create a scale for the width of the bars for the current circle
 					var barScale = d3.scale.linear()
 						.domain([0,dataMax[dataById[this.id]].values]) //max value of bar charts in circle
 						.range([0,(current.r)]); //don't make the max bar bigger than 0.7 times the radius minus the distance in between
-					
+
 					//Title inside circle
 					d3.select(this).append("text")
 						.attr("class","innerCircleTitle")
-						.attr("y", function(d, i) { 
+						.attr("y", function(d, i) {
 							d.titleHeight = (-1 + 0.25) * current.r;
-							return d.titleHeight; 
+							return d.titleHeight;
 						})
 						.attr("dy","0em")
 						.text(function(d,i) { return d.name; })
 						.style("font-size", function(d) {
 							//Calculate best font-size
-							d.fontTitleSize = current.r / 10//this.getComputedTextLength() * 20;				
-							return Math.round(d.fontTitleSize)+"px"; 
+							d.fontTitleSize = current.r / 10//this.getComputedTextLength() * 20;
+							return Math.round(d.fontTitleSize)+"px";
 						})
-						.each(function(d) { 
-							d.textLength = current.r*2*0.7; 
-							wrap(this, d.textLength); 
+						.each(function(d) {
+							d.textLength = current.r*2*0.7;
+							wrap(this, d.textLength);
 						});
-					
-					//Bar chart	wrapper			
+
+					//Bar chart	wrapper
 					var barWrapperInner = d3.select(this).selectAll(".innerBarWrapper")
 						.data(data[dataById[this.id]].values)
 						.enter().append("g")
 						.attr("class", "innerBarWrapper")
-						.attr("x", function(d,i) { 
+						.attr("x", function(d,i) {
 							//Some values are missing, set these to width 0)
-							d.width = (isNaN(d.value) ? 0 : barScale(d.value)); 
-							d.totalOffset = -current.r*0.3; 
-							return d.totalOffset; 
+							d.width = (isNaN(d.value) ? 0 : barScale(d.value));
+							d.totalOffset = -current.r*0.3;
+							return d.totalOffset;
 						})
-						.attr("y", function(d, i) { 
+						.attr("y", function(d, i) {
 							d.eachBarHeight = ((1 - barChartHeightOffset) * 2 * current.r * barChartHeight)/elementsPerBar;
 							d.barHeight = barChartHeightOffset*2*current.r + i*d.eachBarHeight - barChartHeight*current.r;
-							return d.barHeight; 
+							return d.barHeight;
 						});
-						
+
 					//Draw the bars
 					barWrapperInner.append("rect")
 						.attr("class", "innerBar")
-						.attr("width", function(d) { return d.width; }) 
+						.attr("width", function(d) { return d.width; })
 						.attr("height", function(d) {d.height = d.eachBarHeight*0.8; return d.height;})
 						.style("opacity", 0.8)
 						.style("fill", function(d) { return colorBar(d.age); });
-					
-					//Draw the age text	next to the bars		
+
+					//Draw the age text	next to the bars
 					barWrapperInner.append("text")
 						.attr("class", "innerText")
 						.attr("dx", function(d) {
-							d.dx = -current.r*0.05; 
-							return d.dx; 
+							d.dx = -current.r*0.05;
+							return d.dx;
 						})
 						.attr("dy", "1.5em")
 						.style("font-size", function(d) {
 							//Calculate best font-size
-							d.fontSize = current.r / 18;				
-							return Math.round(d.fontSize)+"px"; 
+							d.fontSize = current.r / 18;
+							return Math.round(d.fontSize)+"px";
 						})
 						.text(function(d,i) { return d.age; });
-						
-					//Draw the value inside the bars		
+
+					//Draw the value inside the bars
 					barWrapperInner.append("text")
 						.attr("class", "innerValue")
 						.attr("dy", "1.8em")
 						.style("font-size", function(d) {
 							//Calculate best font-size
-							d.fontSizeValue = current.r / 22;				
-							return Math.round(d.fontSizeValue)+"px"; 
+							d.fontSizeValue = current.r / 22;
+							return Math.round(d.fontSizeValue)+"px";
 						})
 						.text(function(d,i) { return commaFormat(d.value); })
 						.each(function(d) {
@@ -151,18 +155,18 @@ function drawAll() {
 						 })
 						.attr("dx", function(d) {
 							d.r = current.r;
-							
-							if(d.valueWidth*1.1 > (d.width - d.r * 0.03)) d.valuePos = "left"; 
+
+							if(d.valueWidth*1.1 > (d.width - d.r * 0.03)) d.valuePos = "left";
 							else d.valuePos = "right";
-							
+
 							if(d.valuePos === "left") d.valueLoc = d.width + d.r * 0.03;
 							else d.valueLoc = d.width - d.r * 0.03;
-							return d.valueLoc; 
+							return d.valueLoc;
 						})
 						.style("text-anchor", function(d) { return d.valuePos === "left" ? "start" : "end"; })
-						.style("fill", function(d) { return d.valuePos === "left" ? "#333333" : "white"; }); 
+						.style("fill", function(d) { return d.valuePos === "left" ? "#333333" : "white"; });
 				}//if
-			});//each barWrapperOuter 
+			});//each barWrapperOuter
 	}//drawBars
 
 	////////////////////////////////////////////////////////////// 

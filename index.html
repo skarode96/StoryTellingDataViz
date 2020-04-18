@@ -46,6 +46,30 @@
 
                 <hr>
             </section>
+            <section class='step'>
+                <h1>Section 2</h1>
+            </section>
+            <section class='step'>
+                <h1>Section 3</h1>
+            </section>
+            <section class='step'>
+                <h1>Section 4</h1>
+            </section>
+            <section class='step'>
+                <h1>Section 5</h1>
+            </section>
+            <section class='step'>
+                <h1>Section 6</h1>
+            </section>
+            <section class='step'>
+                <h1>Section 7</h1>
+            </section>
+            <section class='step'>
+                <h1>Section 8</h1>
+            </section>
+            <section class='step'>
+                <h1>Section 10</h1>
+            </section>
             <section class="step">
                 <div id="searchTitle" class="title">Find an Occupation</div>
                 <div class="form-group">
@@ -55,17 +79,12 @@
                     </select>
                 </div>
             </section>
-            <section class='step'>
-                <h1>Section 3</h1>
-            </section>
-            <section class="step">
-                <h1>The End</h1>
-            </section>
         </div>
         <div class="col-sm-8" id="vis">
             <div id="loadText">Loading Data</div>
             <div id="bar-chart"></div>
             <div id="bubble-chart"></div>
+            <div id="pie-chart"></div>
         </div>
     </div>
 </div>
@@ -74,12 +93,14 @@
 <script src='scroller.js'></script>
 <script src='sections.js'></script>
 <script src='bar-chart.js'></script>
+<script src='pie-chart.js'></script>
 <script src="script.js"></script>
 
 <script>
     setTimeout(() => drawAll(), 200);
     setTimeout(() => {
         drawBarChart();
+        drawPieChart();
         draw1();
     }, 1000);
 </script>
