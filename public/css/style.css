@@ -267,6 +267,7 @@ a:hover {
 
 .legendText {
     text-anchor: start;
+    stroke: burlywood;
     font-size: 9px;
 }
 
