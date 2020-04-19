@@ -226,6 +226,7 @@ a:hover {
 
 #legendText {
     text-align: left;
+    margin-left: 36px;
     margin-bottom: 10px;
     font-size: 10px;
     line-height: 1.5;
