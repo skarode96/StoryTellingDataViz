@@ -4,11 +4,11 @@
 
 body {
     overflow-x: hidden;
-    background: lightgoldenrodyellow;
+    background: #000000;
 }
 
 .body-background {
-    background: lightgoldenrodyellow;
+    background: #000000;
 }
 
 #sections {
@@ -40,10 +40,13 @@ h1, h2 {
     font-weight: 700;
     text-align: center;
     line-height: 32px;
+    color: white !important;
 }
+
 
 h1 {
     font-size: 35px;
+    color: white;
 }
 
 strong {
@@ -161,7 +164,7 @@ a:hover {
 
 .title {
     font-family: 'Oswald', sans-serif;
-    color: #1c1c1c;
+    color: #ffffff;
     text-align: center;
     margin-top: 100px;
 }
@@ -175,7 +178,7 @@ a:hover {
     text-align: justify;
     margin-bottom: 20px;
     font-size: 16px;
-    color: #4d0606;
+    color: #FFFFFF;
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
 }
@@ -215,7 +218,7 @@ a:hover {
     font-family: 'Oswald', sans-serif;
     margin-bottom: 5px;
     font-size: 13px;
-    color: #1c1c1c;
+    color: #ffffff;
 }
 
 #legendBubble {
@@ -231,12 +234,12 @@ a:hover {
     font-size: 10px;
     line-height: 1.5;
     font-family: 'Merriweather Sans', sans-serif;
-    color: #7D7D7D;
+    color: #ffffff;
 }
 
 .legendCircle {
     stroke-width:1;
-    stroke:#757575;
+    stroke: #c8c8c8;
     stroke-dasharray:2 2;
     fill:none;
 }
@@ -255,7 +258,7 @@ a:hover {
 }
 
 .legendSubTitle {
-    color: #171c12;
+    color: #ffffff;
     text-anchor: middle;
     font-size: 10px;
     line-height: 1.2;
@@ -273,7 +276,7 @@ a:hover {
     margin-top: 2px;
     font-size: 12px;
     position: fixed;
-    color: black;
+    color: #ffffff;
     font-family: 'Merriweather Sans', sans-serif;
 }
 
@@ -329,8 +332,7 @@ a:hover {
 .circleText {
     font-family: 'Oswald', sans-serif;
     text-anchor: middle;
-    color: #3E1302;
-    fill: #3E1302;
+    color: rgba(191, 191, 191, 0.11);
 }
 
 .innerCircleTitle {
@@ -362,7 +364,7 @@ a:hover {
 .axis path,
 .axis line {
     fill: none;
-    stroke: #000;
+    stroke: #bfbfbf;
     shape-rendering: crispEdges;
 }
 

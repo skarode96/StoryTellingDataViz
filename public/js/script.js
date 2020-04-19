@@ -558,7 +558,7 @@ function zoomTo(d) {
 		
 		setTimeout(function() {
 			changeLocation(d,v,k); 
-		}, 50);	
+		}, 10);
 	
 	}//changeReset
 			

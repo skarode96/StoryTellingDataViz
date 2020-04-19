@@ -33,6 +33,7 @@ function drawPieChart() {
 
         svg.append("g")
             .attr("class", "x axis")
+            .attr("stroke","#CCCCCC")
             .attr("transform", "translate(0," + height + ")")
             .call(xAxis)
             .selectAll("text")
@@ -43,6 +44,7 @@ function drawPieChart() {
 
         svg.append("g")
             .attr("class", "y axis")
+            .attr("stroke","#CCCCCC")
             .call(yAxis)
             .append("text")
             .attr("transform", "rotate(-90)")
