@@ -56,7 +56,7 @@ function drawPieChart() {
         svg.selectAll("pie")
             .data(data)
             .enter().append("rect")
-            .style("fill", "steelblue")
+            .style("fill", "rgb(255, 149, 59)")
             .attr("x", function(d) { return x(d.ProfessionCategory) + 25; })
             .attr("width", x.rangeBand() - 45)
             .attr("y", function(d) { return y(d.Value); })

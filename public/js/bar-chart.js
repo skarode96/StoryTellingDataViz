@@ -63,7 +63,7 @@ function drawBarChart() {
         svg.selectAll("bar")
             .data(data)
             .enter().append("rect")
-            .style("fill", "steelblue")
+            .style("fill", "rgb(255, 149, 59)")
             .attr("x", function(d) { return x(d.Age); })
             .attr("width", x.rangeBand())
             .attr("y", function(d) { return y(d.Value); })
