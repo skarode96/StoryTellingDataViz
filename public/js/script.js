@@ -42,7 +42,7 @@ function drawAll() {
 
 	var colorCircle = d3.scale.ordinal()
 			.domain([0,1,2,3])
-			.range(['#FFE39C','#FFCD87','#FFAC63','#FF793B']);
+			.range(['#FFE39C','#FFCD87','#FFAC63','#ee8f3e']);
 			
 	var colorBar = d3.scale.ordinal()
 			.domain(["16 to 19","20 to 24","25 to 34","35 to 44","45 to 54","55 to 64","65+"])
